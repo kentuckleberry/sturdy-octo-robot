@@ -91,3 +91,11 @@ contract GSNFaucet is Initializable, GSNRecipient {
     }
   }
 }
+
+
+function getRecipientBalance() public view returns (uint) {
+    return IRelayHub(getHubAddr()).balanceOf(address(this));
+  }
+
+  function() payable external { }
+}
